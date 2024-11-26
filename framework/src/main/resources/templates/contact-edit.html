@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form th:action="@{/admin/contacts/{id}/edit(id=${contact.id})}" method="post">
+	    <input type="text" name="lastName" th:value="${contact.lastName}" required />
+	    <input type="text" name="firstName" th:value="${contact.firstName}" required />
+	    <input type="email" name="email" th:value="${contact.email}" required />
+	    <input type="text" name="phone" th:value="${contact.phone}" required />
+	    <input type="text" name="zipCode" th:value="${contact.zipCode}" required />
+	    <input type="text" name="address" th:value="${contact.address}" required />
+	    <input type="text" name="buildingName" th:value="${contact.buildingName}" />
+	    <input type="text" name="contactType" th:value="${contact.contactType}" required />
+	    <textarea name="body" required th:text="${contact.body}"></textarea>
+	    <button type="submit">更新</button>
+	</form>
+	<form th:action="@{/admin/contacts/{id}/delete(id=${contact.id})}" method="post">
+	    <button type="submit">削除</button>
+	</form>
+</body>
+</html>
